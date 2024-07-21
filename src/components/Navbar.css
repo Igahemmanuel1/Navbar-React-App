@@ -1,62 +1,80 @@
 /* src/components/Navbar.css */
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  padding: 0.125rem 0.25rem; /* Further reduce padding to decrease height */
+  height: 2rem; /* Set a specific height for the navbar */
+}
+
+.navbar-logo {
+  color: #fff;
+  font-size: 0.5rem; /* Reduce font size to half */
+  font-weight: bold;
+}
+
+.navbar-logo img {
+  height: 15%; /* Reduce the height of the logo image */
+  width: 30%; /* Maintain aspect ratio */
+}
+
+.navbar-links {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-links li {
+  margin-left: 0.5rem; /* Adjust margin to keep spacing consistent */
+}
+
+.navbar-links a {
+  color: #fff;
+  text-decoration: none;
+  padding: 0.125rem 0.25rem; /* Further reduce padding for links */
+  transition: background-color 0.3s;
+}
+
+.navbar-links a:hover {
+  background-color: #575757;
+}
+
+.navbar-menu {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.bar {
+  width: 15px; /* Adjust width to match smaller navbar */
+  height: 2px;
+  background-color: #fff;
+  margin: 2px 0;
+}
+
+@media (max-width: 768px) {
+  .navbar-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    left: 0;
     background-color: #333;
-    padding: 10px 20px;
-  }
-  
-  .navbar-logo a {
-    color: white;
-    text-decoration: none;
-    font-size: 24px;
   }
 
-  .navbar-logo .logo-image {
-    height: 40px; 
-    margin-right: 10px;
-  }
-  
-  .navbar-links {
+  .navbar-links.open {
     display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
   }
-  
+
   .navbar-links li {
-    margin: 0 15px;
+    margin: 0;
   }
-  
-  .navbar-links a {
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
+
+  .navbar-menu {
+    display: flex;
   }
-  
-  .menu-button {
-    display: none;
-    font-size: 24px;
-    color: white;
-    background: none;
-    border: none;
-    cursor: pointer;
-  }
-  
-  @media (max-width: 768px) {
-    .navbar-links {
-      display: none;
-      flex-direction: column;
-      width: 100%;
-    }
-  
-    .navbar-links.open {
-      display: flex;
-    }
-  
-    .menu-button {
-      display: block;
-    }
-  }
-  
+}
+
